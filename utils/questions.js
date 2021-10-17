@@ -53,4 +53,12 @@ module.exports = {
             validate: (value) => { if (value) { return true; } else { return "Enter your school name to continue"; } },
         },
     ],
+    wantContinue: [ 
+        {
+            type: 'confirm',
+            message: 'Would you like to add another employee?:',
+            name: 'answer',
+            validate: (value) => { if (value) { return true; } else { return "Confirm to continue"; } },
+        },
+    ],
 }
