@@ -5,13 +5,16 @@ module.exports = {
             message: 'What type of employee?',
             name: 'employee',
             choices: ["Manager", "Engineer", "Intern"],
-            validate: (value) => { if (value) { return true; } else { return "Select response to continue"; } },
+            validate: (value) => { if (value) { return true; } else { return "Enter response to continue"; } },
 
         }
     ],
     generalQuestions : [
             {
-
+                type: 'input',
+                message: "What is the employee's name?",
+                name: 'name',
+                validate: (value) => { if (value) { return true; } else { return "Enter response to continue"; } },
             },
             {
                 type: 'input',

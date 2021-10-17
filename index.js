@@ -1,8 +1,29 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
-const Employee = require("./Develop/lib/Employee");
-const Engineer = require("./Develop/lib/Engineer");
-const Intern = require("./Develop/lib/Intern");
-const Manager = require("./Develop/lib/Manager");
+// const Employee = require("./lib/Employee");
+// const Engineer = require("./lib/Engineer");
+// const Intern = require("./lib/Intern");
+// const Manager = require("./lib/Manager");
+const questions = require("./utils/questions");
+const { generalQuestions } = require('./utils/questions');
 
+const init = async () => {
+    const typeEmp = await inquirer.prompt(questions.typeofEmployee);
+    collectEmplData(typeEmp)
+    
+}
+const collectEmplData = async (typeEmp) => {
+    console.log(typeEmp)
+    const genEmpInfo = await inquirer.prompt(questions.generalQuestions);
+    console.log("general info");
+}
+
+init ();   
+
+
+
+// fs.writeFile('SampleREADME.md', generateMarkdown(responses), (err) => {
+//     if(err) throw err
+
+// });
